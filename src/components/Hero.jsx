@@ -96,7 +96,7 @@ function Hero() {
             </Link>
 
             <a
-              href="/resume.pdf"
+              href="/public/resume.pdf"
               download
               className="
             border

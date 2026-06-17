@@ -43,7 +43,7 @@ function Navbar() {
 
         {/* Resume Button */}
         <a
-          href="/resume.pdf"
+          href="/public/resume.pdf"
           download
           className="hidden md:block bg-yellow-500 text-black px-5 py-2 rounded-lg font-semibold hover:bg-yellow-400 transition"
         >
