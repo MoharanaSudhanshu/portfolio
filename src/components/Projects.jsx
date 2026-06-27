@@ -21,24 +21,29 @@ function Projects() {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project) => (
+          {projects.map((project, index) => (
             <motion.div
               key={project.title}
               whileHover={{
                 y: -12,
                 scale: 1.03,
               }}
-              className="
-              group
-                bg-[#111]
+              className={`
+                group
+              bg-[#111]
                 border
-                border-gray-800
+              border-gray-800
                 rounded-3xl
                 overflow-hidden
-                hover:border-yellow-500/40
+              hover:border-yellow-500/40
                 transition-all
                 duration-300
-              "
+              ${
+                  projects.length % 2 !== 0 && index === projects.length - 1
+                  ? "md:col-span-2 md:max-w-xl md:mx-auto"
+                  : ""
+                }
+            `}
             >
               <img
                 src={project.image}
