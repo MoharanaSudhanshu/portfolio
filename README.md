@@ -2,7 +2,7 @@
 
 A modern and responsive developer portfolio built with **React, Vite, Tailwind CSS, Framer Motion, and EmailJS**. This portfolio showcases my projects, technical skills, education, and provides an easy way to connect with me.
 
-![Portfolio Preview](./public/og-image.png)
+![Portfolio Preview]([./public/og-image.png](https://moharanasudhanshu.github.io/portfolio/))
 
 ## 🌟 Features
 
