@@ -79,15 +79,6 @@ function Navbar() {
               {link}
             </Link>
           ))}
-
-          <a
-            href={resumeUrl}
-            download
-            onClick={() => setIsOpen(false)}
-            className="mt-5 inline-block rounded-md bg-[#D9AE4D] px-5 py-3 text-sm font-semibold text-black transition hover:bg-[#E8C46C]"
-          >
-            Download Resume
-          </a>
         </div>
       )}
     </nav>
