@@ -32,74 +32,76 @@ function Hero() {
       "
     >
       {/* Background Portrait */}
-      <div
-        className="
-          absolute
-          inset-x-0
-          top-[42px]
-          h-[470px]
-          overflow-hidden
-          pointer-events-none
-          -z-10
+<div
+  className="
+    absolute
+    inset-x-0
+    top-[42px]
+    h-[470px]
+    overflow-hidden
+    pointer-events-none
+    -z-10
 
-          sm:top-[50px]
-          sm:h-[510px]
+    sm:top-[50px]
+    sm:h-[510px]
 
-          md:inset-y-0
-          md:left-auto
-          md:right-0
-          md:top-0
-          md:h-full
-          md:w-[52%]
-        "
-      >
-        <img
-          src={profile}
-          alt="Sudhanshu Moharana"
-          className="
-            absolute
-            right-0
-            top-0
-            h-full
-            w-[72%]
-            object-cover
-            object-[65%_top]
-            grayscale
+    md:inset-y-0
+    md:left-auto
+    md:right-0
+    md:top-0
+    md:h-full
+    md:w-[52%]
+  "
+>
+  <img
+    src={profile}
+    alt="Sudhanshu Moharana"
+    className="
+      absolute
+      right-0
+      top-0
+      h-full
+      w-[72%]
+      object-cover
+      object-[65%_top]
+      grayscale
 
-            sm:w-[65%]
+      sm:w-[65%]
 
-            md:w-full
-            md:object-[65%_center]
-          "
-        />
+      md:w-full
+      md:object-[65%_center]
+      md:brightness-125
+      md:contrast-110
+    "
+  />
 
-        {/* Mobile portrait blending */}
-        <div
-          className="
-            absolute
-            inset-0
-            bg-gradient-to-b
-            from-[#0b0b0b]/10
-            via-transparent
-            to-[#0b0b0b]
-            md:hidden
-          "
-        />
+  {/* Mobile: retain the bottom fade */}
+  <div
+    className="
+      absolute
+      inset-0
+      bg-gradient-to-b
+      from-[#0b0b0b]/10
+      via-transparent
+      to-[#0b0b0b]
+      md:hidden
+    "
+  />
 
-        {/* Desktop portrait blending */}
-        <div
-          className="
-            absolute
-            inset-0
-            hidden
-            bg-gradient-to-r
-            from-[#0b0b0b]
-            via-[#0b0b0b]/50
-            to-transparent
-            md:block
-          "
-        />
-      </div>
+  {/* Desktop: blend only the left edge, not the face */}
+  <div
+    className="
+      absolute
+      inset-0
+      hidden
+      md:block
+      bg-gradient-to-r
+      from-[#0b0b0b]
+      via-[#0b0b0b]/25
+      to-transparent
+    "
+  />
+</div>
 
       {/* Hero Content */}
       <div
