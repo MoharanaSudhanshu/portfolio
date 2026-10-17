@@ -55,7 +55,8 @@ function Hero() {
       id="home"
       className="
         relative isolate flex items-center
-        overflow-hidden bg-[#050505] text-white
+        overflow-hidden
+        bg-[#050505] text-white
         min-h-[calc(100svh-72px)]
         py-8
         sm:py-12
@@ -77,22 +78,22 @@ function Hero() {
           className="
             absolute right-0
             top-[30px]
-            h-[350px] w-[55%]
+            h-[350px] w-[52%]
             object-cover
             object-[65%_center]
             grayscale
             sm:top-[35px]
-            sm:h-[390px] sm:w-[50%]
+            sm:h-[400px] sm:w-[50%]
           "
           style={{
             maskImage:
-              "linear-gradient(to bottom, black 0%, black 62%, transparent 100%)",
+              "linear-gradient(to bottom, black 0%, black 65%, transparent 100%)",
             WebkitMaskImage:
-              "linear-gradient(to bottom, black 0%, black 62%, transparent 100%)",
+              "linear-gradient(to bottom, black 0%, black 65%, transparent 100%)",
           }}
         />
 
-        {/* BLEND IMAGE WITH CONTENT */}
+        {/* Blend the portrait into the black background */}
         <div
           className="
             absolute inset-0
@@ -103,19 +104,18 @@ function Hero() {
           "
         />
 
-        {/* KEEP THE BOTTOM COLOR CONSISTENT */}
+        {/* Prevent a visible colour change at the bottom */}
         <div
           className="
             absolute inset-0
             bg-gradient-to-b
-            from-transparent
-            via-transparent
+            from-transparent via-transparent
             to-[#050505]
           "
         />
       </div>
 
-      {/* DESKTOP BACKGROUND PORTRAIT */}
+      {/* DESKTOP PORTRAIT */}
       <div
         className="
           pointer-events-none
@@ -143,17 +143,16 @@ function Hero() {
             absolute inset-0
             bg-gradient-to-r
             from-[#050505]
-            via-[#050505]/20
+            via-[#050505]/25
             to-transparent
           "
         />
       </div>
 
-      {/* HERO CONTENT */}
+      {/* MAIN CONTENT */}
       <div
         className="
-          relative mx-auto w-full
-          max-w-[1500px]
+          relative mx-auto w-full max-w-[1500px]
           px-5
           sm:px-10
           lg:px-16 xl:px-20
@@ -174,9 +173,8 @@ function Hero() {
           <p
             className="
               mb-3
-              text-[11px] font-medium
-              uppercase tracking-[0.28em]
-              text-gray-400
+              text-[11px] font-medium uppercase
+              tracking-[0.28em] text-gray-400
               sm:mb-4 sm:text-sm
               sm:tracking-[0.4em]
             "
@@ -201,7 +199,7 @@ function Hero() {
             Moharana
           </h1>
 
-          {/* GOLD LINE */}
+          {/* GOLD ACCENT */}
           <div
             className="
               mt-4 mb-3
@@ -211,7 +209,7 @@ function Hero() {
             "
           />
 
-          {/* ANIMATED ROLE */}
+          {/* ROLE */}
           <div
             className="
               min-h-[24px]
@@ -271,10 +269,12 @@ function Hero() {
               className="
                 inline-flex min-h-11
                 cursor-pointer items-center justify-center
-                rounded-md bg-[#D9AE4D]
+                rounded-md
+                bg-[#D9AE4D]
                 px-4 py-2.5
                 text-xs font-semibold text-black
-                transition-colors hover:bg-[#E8C46C]
+                transition-colors
+                hover:bg-[#E8C46C]
                 sm:px-6 sm:py-3 sm:text-sm
                 lg:text-base
               "
@@ -291,9 +291,11 @@ function Hero() {
                 rounded-md
                 border border-[#D9AE4D]/70
                 px-4 py-2.5
-                text-xs font-medium text-[#D9AE4D]
+                text-xs font-medium
+                text-[#D9AE4D]
                 transition-colors
-                hover:bg-[#D9AE4D] hover:text-black
+                hover:bg-[#D9AE4D]
+                hover:text-black
                 sm:px-6 sm:py-3 sm:text-sm
                 lg:text-base
               "
