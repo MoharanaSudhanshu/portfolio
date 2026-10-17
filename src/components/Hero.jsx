@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-scroll";
@@ -55,15 +54,15 @@ function Hero() {
     <section
       id="home"
       className="
-        relative isolate min-h-screen overflow-hidden
-        bg-[#050505] text-white
-        flex items-center
-        pt-24 pb-12
-        sm:pt-28
-        lg:pt-20 lg:pb-10
+        relative isolate flex min-h-[calc(100svh-72px)]
+        items-center overflow-hidden bg-[#050505]
+        text-white
+        pt-8 pb-8
+        sm:min-h-screen sm:pt-20
+        lg:min-h-screen lg:pt-20 lg:pb-12
       "
     >
-      {/* Full-bleed portrait background for mobile */}
+      {/* MOBILE BACKGROUND PORTRAIT */}
       <div
         className="
           absolute inset-0 -z-10 overflow-hidden
@@ -75,39 +74,45 @@ function Hero() {
           src={profile}
           alt=""
           className="
-            absolute inset-y-0 right-0
-            h-full w-[88%]
-            object-cover object-[65%_top]
-            grayscale opacity-35
+            absolute right-0 top-0
+            h-full w-full
+            object-cover
+            object-[62%_center]
+            grayscale
+            opacity-45
           "
         />
 
-        {/* Keep the text readable while showing more of the face */}
+        {/* Keep the left text area readable */}
         <div
           className="
             absolute inset-0
             bg-gradient-to-r
-            from-[#050505] via-[#050505]/75
-            to-[#050505]/15
+            from-[#050505]
+            via-[#050505]/80
+            to-[#050505]/25
           "
         />
 
+        {/* Subtle bottom fade */}
         <div
           className="
             absolute inset-0
             bg-gradient-to-t
-            from-[#050505] via-transparent
-            to-[#050505]/20
+            from-[#050505]/70
+            via-transparent
+            to-[#050505]/15
           "
         />
       </div>
 
-      {/* Desktop portrait fills the right side without a frame */}
+      {/* DESKTOP FULL-BLEED PORTRAIT */}
       <div
         className="
           pointer-events-none absolute inset-y-0
           right-0 -z-10 hidden
-          w-[57%] overflow-hidden lg:block
+          w-[58%] overflow-hidden
+          lg:block
         "
         aria-hidden="true"
       >
@@ -117,69 +122,86 @@ function Hero() {
           className="
             absolute inset-0
             h-full w-full
-            object-cover object-[65%_20%]
-            grayscale opacity-70
+            object-cover
+            object-[65%_center]
+            grayscale
+            opacity-100
           "
         />
 
-        {/* Blend portrait into the left-side content */}
+        {/* Blend only the left side of the portrait */}
         <div
           className="
             absolute inset-0
             bg-gradient-to-r
             from-[#050505]
-            via-[#050505]/65
+            via-[#050505]/35
             to-transparent
           "
         />
 
+        {/* A light bottom fade, preserving face details */}
         <div
           className="
             absolute inset-0
             bg-gradient-to-t
-            from-[#050505]/65
+            from-[#050505]/30
             via-transparent
-            to-[#050505]/15
+            to-transparent
           "
         />
       </div>
 
-      {/* Content */}
+      {/* MAIN CONTENT */}
       <div
         className="
-          relative mx-auto w-full max-w-[1500px]
-          px-5 sm:px-10 lg:px-16
+          relative mx-auto w-full
+          max-w-[1500px]
+          px-5
+          sm:px-10
+          lg:px-16
+          xl:px-20
         "
       >
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="
             relative z-10
-            w-full max-w-2xl
-            lg:max-w-[58%]
+            w-full
+            max-w-[560px]
+            lg:max-w-[54%]
+            xl:max-w-[620px]
           "
         >
+          {/* INTRODUCTION LABEL */}
           <p
             className="
-              mb-4
-              text-[11px] font-medium uppercase
-              tracking-[0.28em] text-gray-400
-              sm:text-sm sm:tracking-[0.4em]
+              mb-3
+              text-[11px]
+              font-medium
+              uppercase
+              tracking-[0.28em]
+              text-gray-400
+              sm:mb-4
+              sm:text-sm
+              sm:tracking-[0.4em]
             "
           >
             Hello, I am
           </p>
 
+          {/* NAME */}
           <h1
             className="
               font-serif font-medium
               tracking-[-0.045em]
-              text-[clamp(2.4rem,8.5vw,3.5rem)]
+              text-[clamp(2.35rem,8.1vw,3.5rem)]
               leading-[0.98]
               sm:text-6xl
-              lg:text-[clamp(3.7rem,5.2vw,5.8rem)]
+              lg:text-[clamp(3.5rem,5vw,5.5rem)]
+              xl:text-[5.8rem]
             "
           >
             Sudhanshu
@@ -187,23 +209,25 @@ function Hero() {
             Moharana
           </h1>
 
-          {/* Gold accent */}
+          {/* GOLD ACCENT */}
           <div
             className="
-              mt-5 mb-4
+              mt-4 mb-3
               h-[3px] w-16
               bg-[#D9AE4D]
-              sm:mt-6 sm:mb-5 sm:w-20
+              sm:mt-6 sm:mb-4
+              sm:w-20
             "
           />
 
-          {/* Typing animation */}
+          {/* PROFESSION */}
           <div
             className="
-              min-h-[28px]
-              text-sm font-medium
+              min-h-[24px]
+              text-sm font-semibold
               text-[#D9AE4D]
-              sm:min-h-[34px] sm:text-lg
+              sm:min-h-[30px]
+              sm:text-lg
               lg:text-xl
             "
           >
@@ -224,14 +248,19 @@ function Hero() {
             />
           </div>
 
-          {/* Short introduction */}
+          {/* DESCRIPTION */}
           <p
             className="
-              mt-4 max-w-xl
-              text-[13px] leading-6
+              mt-4
+              max-w-[530px]
+              text-[13px]
+              leading-[1.8]
               text-gray-300
-              sm:mt-5 sm:text-base sm:leading-7
-              lg:text-lg lg:leading-8
+              sm:mt-5
+              sm:text-base
+              sm:leading-7
+              lg:text-lg
+              lg:leading-8
             "
           >
             Computer Science student at SUIIT Burla,
@@ -241,12 +270,15 @@ function Hero() {
             software solutions.
           </p>
 
-          {/* Buttons */}
+          {/* ACTION BUTTONS */}
           <div
             className="
-              mt-6 flex flex-wrap
-              items-center gap-3
-              sm:mt-7 sm:gap-4
+              mt-5
+              flex flex-wrap
+              items-center
+              gap-3
+              sm:mt-7
+              sm:gap-4
             "
           >
             <Link
@@ -255,14 +287,22 @@ function Hero() {
               duration={500}
               offset={-80}
               className="
-                inline-flex min-h-11
-                cursor-pointer items-center
-                justify-center rounded-md
+                inline-flex
+                min-h-11
+                cursor-pointer
+                items-center
+                justify-center
+                rounded-md
                 bg-[#D9AE4D]
                 px-4 py-2.5
-                text-xs font-semibold text-black
-                transition-colors hover:bg-[#E8C46C]
-                sm:px-6 sm:py-3 sm:text-sm
+                text-xs
+                font-semibold
+                text-black
+                transition-colors
+                hover:bg-[#E8C46C]
+                sm:px-6
+                sm:py-3
+                sm:text-sm
                 lg:text-base
               "
             >
@@ -273,15 +313,23 @@ function Hero() {
               href={`${import.meta.env.BASE_URL}resume.pdf`}
               download
               className="
-                inline-flex min-h-11
-                items-center justify-center
+                inline-flex
+                min-h-11
+                items-center
+                justify-center
                 rounded-md
-                border border-[#D9AE4D]/60
+                border
+                border-[#D9AE4D]/70
                 px-4 py-2.5
-                text-xs font-medium text-[#D9AE4D]
+                text-xs
+                font-medium
+                text-[#D9AE4D]
                 transition-colors
-                hover:bg-[#D9AE4D] hover:text-black
-                sm:px-6 sm:py-3 sm:text-sm
+                hover:bg-[#D9AE4D]
+                hover:text-black
+                sm:px-6
+                sm:py-3
+                sm:text-sm
                 lg:text-base
               "
             >
@@ -289,13 +337,18 @@ function Hero() {
             </a>
           </div>
 
-          {/* Social links */}
+          {/* SOCIAL LINKS */}
           <div
             className="
-              mt-7 flex flex-wrap
-              items-center gap-5
-              text-lg text-gray-300
-              sm:mt-8 sm:gap-6 sm:text-xl
+              mt-6
+              flex flex-wrap
+              items-center
+              gap-5
+              text-lg
+              text-gray-300
+              sm:mt-8
+              sm:gap-6
+              sm:text-xl
               lg:text-2xl
             "
           >
@@ -315,7 +368,8 @@ function Hero() {
                     : "noopener noreferrer"
                 }
                 className="
-                  transition-colors duration-300
+                  transition-colors
+                  duration-300
                   hover:text-[#D9AE4D]
                 "
               >
@@ -325,7 +379,7 @@ function Hero() {
           </div>
         </motion.div>
 
-        {/* Scroll indicator */}
+        {/* SCROLL INDICATOR */}
         <Link
           to="about"
           smooth={true}
@@ -333,10 +387,17 @@ function Hero() {
           offset={-80}
           aria-label="Scroll to About section"
           className="
-            mt-10 block cursor-pointer
-            text-center text-xl text-gray-500
-            transition-colors hover:text-[#D9AE4D]
-            sm:mt-12
+            relative z-10
+            mt-8
+            block
+            cursor-pointer
+            text-center
+            text-xl
+            text-gray-500
+            transition-colors
+            hover:text-[#D9AE4D]
+            sm:mt-10
+            lg:mt-8
           "
         >
           ˅
