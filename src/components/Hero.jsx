@@ -17,206 +17,161 @@ import {
 import profile from "../assets/images/profile.png";
 
 function Hero() {
-  const socialLinks = [
-    {
-      icon: <FaGithub />,
-      url: "https://github.com/MoharanaSudhanshu",
-      label: "GitHub",
-    },
-    {
-      icon: <SiLeetcode />,
-      url: "https://leetcode.com/u/sudhanshumoharana/",
-      label: "LeetCode",
-    },
-    {
-      icon: <SiHackerrank />,
-      url: "https://www.hackerrank.com/profile/moharanasudhans1",
-      label: "HackerRank",
-    },
-    {
-      icon: <FaLinkedin />,
-      url: "https://www.linkedin.com/in/sudhanshu-sekhar-moharana-518b85290/",
-      label: "LinkedIn",
-    },
-    {
-      icon: <SiInstagram />,
-      url: "https://www.instagram.com/moharanasudhanshu/",
-      label: "Instagram",
-    },
-    {
-      icon: <FaEnvelope />,
-      url: "mailto:moharanasudhanshu1@gmail.com",
-      label: "Email",
-    },
-  ];
-
   return (
     <section
-          id="home"
-          className="
-            relative isolate flex items-center
-            overflow-hidden
-            bg-[#0b0b0b] text-white
-            min-h-[calc(100svh-72px)]
-            pt-12 pb-8
-            sm:pt-16 sm:pb-12
-            lg:min-h-screen lg:py-20
-          "
-        >
-      {/* MOBILE BACKGROUND PORTRAIT */}
+      id="home"
+      className="
+        relative isolate
+        min-h-screen
+        overflow-hidden
+        bg-[#0b0b0b]
+        text-white
+        flex items-center
+        pt-24 pb-12
+        md:pt-20 md:pb-16
+      "
+    >
+      {/* Background Portrait */}
       <div
         className="
-          absolute inset-0 -z-10
-          overflow-hidden bg-[#050505]
-          lg:hidden
-        "
-        aria-hidden="true"
-      >
-        <img
-          src={profile}
-          alt=""
-          className="
-            absolute right-0
-            top-[30px]
-            h-[350px] w-[52%]
-            object-cover
-            object-[65%_center]
-            grayscale
-            sm:top-[35px]
-            sm:h-[400px] sm:w-[50%]
-          "
-          style={{
-            maskImage:
-              "linear-gradient(to bottom, black 0%, black 65%, transparent 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to bottom, black 0%, black 65%, transparent 100%)",
-          }}
-        />
-
-        {/* Blend the portrait into the black background */}
-        <div
-          className="
-            absolute inset-0
-            bg-gradient-to-r
-            from-[#050505] from-0%
-            via-[#050505]/65 via-45%
-            to-transparent to-85%
-          "
-        />
-
-        {/* Prevent a visible colour change at the bottom */}
-        <div
-          className="
-            absolute inset-0
-            bg-gradient-to-b
-            from-transparent via-transparent
-            to-[#050505]
-          "
-        />
-      </div>
-
-      {/* DESKTOP PORTRAIT */}
-      <div
-        className="
+          absolute
+          inset-x-0
+          top-[42px]
+          h-[470px]
+          overflow-hidden
           pointer-events-none
-          absolute inset-y-0 right-0 -z-10
-          hidden w-[58%]
-          overflow-hidden bg-[#050505]
-          lg:block
+          -z-10
+
+          sm:top-[50px]
+          sm:h-[510px]
+
+          md:inset-y-0
+          md:left-auto
+          md:right-0
+          md:top-0
+          md:h-full
+          md:w-[52%]
         "
-        aria-hidden="true"
       >
         <img
           src={profile}
-          alt=""
+          alt="Sudhanshu Moharana"
           className="
-            absolute inset-0
-            h-full w-full
+            absolute
+            right-0
+            top-0
+            h-full
+            w-[72%]
             object-cover
-            object-[65%_center]
+            object-[65%_top]
             grayscale
+
+            sm:w-[65%]
+
+            md:w-full
+            md:object-[65%_center]
+          "
+        />
+
+        {/* Blend portrait into the black background */}
+        <div
+          className="
+            absolute
+            inset-0
+            bg-gradient-to-b
+            from-[#0b0b0b]/10
+            via-transparent
+            to-[#0b0b0b]
+            md:hidden
           "
         />
 
         <div
           className="
-            absolute inset-0
+            absolute
+            inset-0
             bg-gradient-to-r
-            from-[#050505]
-            via-[#050505]/25
+            from-[#0b0b0b]
+            via-[#0b0b0b]/50
             to-transparent
+            md:block
           "
         />
       </div>
 
-      {/* MAIN CONTENT */}
+      {/* Hero Content */}
       <div
         className="
-          relative mx-auto w-full max-w-[1500px]
-          px-5
-          sm:px-10
-          lg:px-16 xl:px-20
+          relative
+          z-10
+          w-full
+          max-w-7xl
+          mx-auto
+          px-6
+          sm:px-8
+          lg:px-10
         "
       >
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="
-            relative z-10
-            w-full max-w-[560px]
-            lg:max-w-[54%]
-            xl:max-w-[620px]
-          "
-        >
-          {/* INTRO */}
-          <p
+        <div className="max-w-3xl">
+          {/* Intro */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
             className="
-              mb-3
-              text-[11px] font-medium uppercase
-              tracking-[0.28em] text-gray-400
-              sm:mb-4 sm:text-sm
-              sm:tracking-[0.4em]
+              text-gray-400
+              text-sm
+              sm:text-base
+              font-semibold
+              tracking-[0.35em]
+              uppercase
+              mb-5
             "
           >
             Hello, I am
-          </p>
+          </motion.p>
 
-          {/* NAME */}
-          <h1
+          {/* Name */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
             className="
-              font-serif font-medium
+              font-serif
+              font-medium
+              text-white
+              text-[clamp(2.8rem,8vw,5.8rem)]
+              leading-[0.98]
               tracking-[-0.045em]
-              text-[clamp(2.15rem,8vw,3.1rem)]
-              leading-[0.99]
-              sm:text-6xl
-              lg:text-[clamp(3.5rem,5vw,5.5rem)]
-              xl:text-[5.8rem]
             "
           >
             Sudhanshu
             <br />
             Moharana
-          </h1>
+          </motion.h1>
 
-          {/* GOLD ACCENT */}
-          <div
+          {/* Gold Divider */}
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: 118 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
             className="
-              mt-4 mb-3
-              h-[3px] w-16
-              bg-[#D9AE4D]
-              sm:mt-6 sm:mb-4 sm:w-20
+              h-[5px]
+              bg-[#d4af55]
+              mt-7
+              mb-6
             "
           />
 
-          {/* ROLE */}
+          {/* Animated Designation */}
           <div
             className="
-              min-h-[24px]
-              text-sm font-semibold
-              text-[#D9AE4D]
-              sm:min-h-[30px] sm:text-lg
-              lg:text-xl
+              min-h-[34px]
+              text-[#d4af55]
+              text-lg
+              sm:text-xl
+              md:text-2xl
+              font-semibold
             "
           >
             <TypeAnimation
@@ -236,29 +191,37 @@ function Hero() {
             />
           </div>
 
-          {/* DESCRIPTION */}
-          <p
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             className="
-              mt-4 max-w-[530px]
-              text-[13px] leading-[1.8]
+              mt-7
+              max-w-2xl
               text-gray-300
-              sm:mt-5 sm:text-base sm:leading-7
-              lg:text-lg lg:leading-8
+              text-base
+              sm:text-lg
+              leading-8
             "
           >
-            Computer Science student at SUIIT Burla,
-            passionate about building full-stack
-            applications, exploring artificial
-            intelligence, and creating scalable
+            Computer Science student at SUIIT Burla, passionate
+            about building full-stack applications, exploring
+            artificial intelligence, and creating scalable
             software solutions.
-          </p>
+          </motion.p>
 
-          {/* ACTION BUTTONS */}
-          <div
+          {/* Action Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
             className="
-              mt-5 flex flex-wrap
-              items-center gap-3
-              sm:mt-7 sm:gap-4
+              mt-8
+              flex
+              flex-wrap
+              gap-3
+              sm:gap-4
             "
           >
             <Link
@@ -267,78 +230,129 @@ function Hero() {
               duration={500}
               offset={-80}
               className="
-                inline-flex min-h-11
-                cursor-pointer items-center justify-center
-                rounded-md
-                bg-[#D9AE4D]
-                px-4 py-2.5
-                text-xs font-semibold text-black
-                transition-colors
-                hover:bg-[#E8C46C]
-                sm:px-6 sm:py-3 sm:text-sm
-                lg:text-base
+                inline-flex
+                items-center
+                justify-center
+                cursor-pointer
+                rounded-lg
+                bg-[#d4af55]
+                px-5
+                py-3.5
+                sm:px-7
+                sm:py-4
+                text-sm
+                sm:text-base
+                font-semibold
+                text-black
+                transition
+                hover:bg-[#f4c95d]
               "
             >
               Explore My Work
             </Link>
 
             <a
-              href={`${import.meta.env.BASE_URL}resume.pdf`}
+              href="/resume.pdf"
               download
               className="
-                inline-flex min-h-11
-                items-center justify-center
-                rounded-md
-                border border-[#D9AE4D]/70
-                px-4 py-2.5
-                text-xs font-medium
-                text-[#D9AE4D]
-                transition-colors
-                hover:bg-[#D9AE4D]
+                inline-flex
+                items-center
+                justify-center
+                rounded-lg
+                border
+                border-[#8d7541]
+                px-5
+                py-3.5
+                sm:px-7
+                sm:py-4
+                text-sm
+                sm:text-base
+                font-semibold
+                text-[#d4af55]
+                transition
+                hover:bg-[#d4af55]
                 hover:text-black
-                sm:px-6 sm:py-3 sm:text-sm
-                lg:text-base
               "
             >
               Download Resume
             </a>
-          </div>
+          </motion.div>
 
-          {/* SOCIAL LINKS */}
-          <div
+          {/* Social Links */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
             className="
-              mt-6 flex flex-wrap
-              items-center gap-5
-              text-lg text-gray-300
-              sm:mt-8 sm:gap-6 sm:text-xl
-              lg:text-2xl
+              mt-8
+              flex
+              flex-wrap
+              items-center
+              gap-6
+              text-2xl
+              text-gray-300
+              sm:gap-7
             "
           >
-            {socialLinks.map((social) => (
-              <a
-                key={social.label}
-                href={social.url}
-                aria-label={social.label}
-                target={
-                  social.label === "Email"
-                    ? undefined
-                    : "_blank"
-                }
-                rel={
-                  social.label === "Email"
-                    ? undefined
-                    : "noopener noreferrer"
-                }
-                className="
-                  transition-colors duration-300
-                  hover:text-[#D9AE4D]
-                "
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
-        </motion.div>
+            <a
+              href="https://github.com/MoharanaSudhanshu"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="transition hover:text-[#d4af55]"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="https://leetcode.com/u/sudhanshumoharana/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LeetCode"
+              className="transition hover:text-[#d4af55]"
+            >
+              <SiLeetcode />
+            </a>
+
+            <a
+              href="https://www.hackerrank.com/profile/moharanasudhans1"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="HackerRank"
+              className="transition hover:text-[#d4af55]"
+            >
+              <SiHackerrank />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/sudhanshu-sekhar-moharana-518b85290/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="transition hover:text-[#d4af55]"
+            >
+              <FaLinkedin />
+            </a>
+
+            <a
+              href="https://www.instagram.com/moharanasudhanshu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="transition hover:text-[#d4af55]"
+            >
+              <SiInstagram />
+            </a>
+
+            <a
+              href="mailto:moharanasudhanshu1@gmail.com"
+              aria-label="Email"
+              className="transition hover:text-[#d4af55]"
+            >
+              <FaEnvelope />
+            </a>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
