@@ -117,12 +117,12 @@ function Hero() {
           {/* Quick Stats */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
             <div>
-              <h3 className="text-2xl font-bold text-yellow-500">8.62</h3>
+              <h3 className="text-2xl font-bold text-yellow-500">8.77</h3>
               <p className="text-gray-400 text-sm">CGPA</p>
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold text-yellow-500">3</h3>
+              <h3 className="text-2xl font-bold text-yellow-500">4</h3>
               <p className="text-gray-400 text-sm">Internships</p>
             </div>
 
