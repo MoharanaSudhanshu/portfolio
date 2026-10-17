@@ -211,10 +211,7 @@ function Hero() {
               sm:leading-8
             "
           >
-            Computer Science student at SUIIT Burla, passionate
-            about building full-stack applications, exploring
-            artificial intelligence, and creating scalable
-            software solutions.
+            Hey, I'm Sudhanshu — a Software Engineer and passionate problem-solver who sees code as more than syntax. For me, every bug is a riddle, every feature a challenge, and every project a chance to build something smarter, cleaner, and faster.
           </motion.p>
 
           {/* Buttons */}
