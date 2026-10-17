@@ -52,17 +52,17 @@ function Hero() {
 
   return (
     <section
-      id="home"
-      className="
-        relative isolate flex items-center
-        overflow-hidden
-        bg-[#050505] text-white
-        min-h-[calc(100svh-72px)]
-        py-8
-        sm:py-12
-        lg:min-h-screen lg:py-20
-      "
-    >
+          id="home"
+          className="
+            relative isolate flex items-center
+            overflow-hidden
+            bg-[#0b0b0b] text-white
+            min-h-[calc(100svh-72px)]
+            pt-12 pb-8
+            sm:pt-16 sm:pb-12
+            lg:min-h-screen lg:py-20
+          "
+        >
       {/* MOBILE BACKGROUND PORTRAIT */}
       <div
         className="
