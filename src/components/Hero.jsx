@@ -55,20 +55,18 @@ function Hero() {
       id="home"
       className="
         relative isolate
-        min-h-screen
         overflow-hidden
         bg-[#050505]
         text-white
+        min-h-[calc(100svh-72px)]
         flex items-center
-        py-12
-        sm:py-16
+        py-8
+        sm:py-12
+        lg:min-h-screen
         lg:py-20
       "
     >
-      {/* =====================================
-          MOBILE PORTRAIT
-          Positioned beside the name
-      ====================================== */}
+      {/* MOBILE PORTRAIT */}
       <div
         className="
           absolute inset-0 -z-10
@@ -83,38 +81,38 @@ function Hero() {
           alt=""
           className="
             absolute
-            right-[-7%]
-            top-[28px]
-            h-[280px]
-            w-[52%]
+            right-[-3%]
+            top-[12px]
+            h-[270px]
+            w-[49%]
             object-cover
-            object-[65%_center]
+            object-[62%_center]
             grayscale
-            opacity-75
-            sm:top-[35px]
-            sm:h-[340px]
-            sm:w-[48%]
+            opacity-80
+            sm:top-[18px]
+            sm:h-[320px]
+            sm:w-[45%]
           "
           style={{
             maskImage:
-              "linear-gradient(to bottom, transparent 0%, black 10%, black 70%, transparent 100%)",
+              "linear-gradient(to bottom, transparent 0%, black 12%, black 65%, transparent 100%)",
             WebkitMaskImage:
-              "linear-gradient(to bottom, transparent 0%, black 10%, black 70%, transparent 100%)",
+              "linear-gradient(to bottom, transparent 0%, black 12%, black 65%, transparent 100%)",
           }}
         />
 
-        {/* Keep text readable on the left */}
+        {/* Blend portrait into the text area */}
         <div
           className="
             absolute inset-0
             bg-gradient-to-r
             from-[#050505]
-            via-[#050505]/85
-            to-[#050505]/15
+            via-[#050505]/75
+            to-transparent
           "
         />
 
-        {/* Smooth bottom blend */}
+        {/* Prevent a visible color boundary at the bottom */}
         <div
           className="
             absolute inset-0
@@ -126,10 +124,7 @@ function Hero() {
         />
       </div>
 
-      {/* =====================================
-          DESKTOP PORTRAIT
-          Desktop styling kept separate
-      ====================================== */}
+      {/* DESKTOP PORTRAIT */}
       <div
         className="
           pointer-events-none
@@ -174,9 +169,7 @@ function Hero() {
         />
       </div>
 
-      {/* =====================================
-          HERO CONTENT
-      ====================================== */}
+      {/* CONTENT */}
       <div
         className="
           relative mx-auto
@@ -219,10 +212,9 @@ function Hero() {
           {/* NAME */}
           <h1
             className="
-              font-serif
-              font-medium
+              font-serif font-medium
               tracking-[-0.045em]
-              text-[clamp(2.3rem,8vw,3.4rem)]
+              text-[clamp(2.2rem,7.8vw,3.2rem)]
               leading-[0.98]
               sm:text-6xl
               lg:text-[clamp(3.5rem,5vw,5.5rem)]
@@ -249,8 +241,7 @@ function Hero() {
           <div
             className="
               min-h-[24px]
-              text-sm
-              font-semibold
+              text-sm font-semibold
               text-[#D9AE4D]
               sm:min-h-[30px]
               sm:text-lg
@@ -296,7 +287,7 @@ function Hero() {
             software solutions.
           </p>
 
-          {/* ACTION BUTTONS */}
+          {/* BUTTONS */}
           <div
             className="
               mt-5
@@ -321,13 +312,11 @@ function Hero() {
                 rounded-md
                 bg-[#D9AE4D]
                 px-4 py-2.5
-                text-xs
-                font-semibold
+                text-xs font-semibold
                 text-black
                 transition-colors
                 hover:bg-[#E8C46C]
-                sm:px-6
-                sm:py-3
+                sm:px-6 sm:py-3
                 sm:text-sm
                 lg:text-base
               "
@@ -347,14 +336,12 @@ function Hero() {
                 border
                 border-[#D9AE4D]/70
                 px-4 py-2.5
-                text-xs
-                font-medium
+                text-xs font-medium
                 text-[#D9AE4D]
                 transition-colors
                 hover:bg-[#D9AE4D]
                 hover:text-black
-                sm:px-6
-                sm:py-3
+                sm:px-6 sm:py-3
                 sm:text-sm
                 lg:text-base
               "
