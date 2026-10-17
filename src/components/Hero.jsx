@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-scroll";
@@ -56,15 +55,14 @@ function Hero() {
       id="home"
       className="
         relative isolate flex items-center
-        min-h-[calc(100vh-72px)]
+        overflow-hidden bg-[#050505] text-white
         min-h-[calc(100svh-72px)]
-        overflow-hidden
-        bg-[#050505] text-white
-        py-10 sm:py-14
+        py-8
+        sm:py-12
         lg:min-h-screen lg:py-20
       "
     >
-      {/* MOBILE PORTRAIT */}
+      {/* MOBILE BACKGROUND PORTRAIT */}
       <div
         className="
           absolute inset-0 -z-10
@@ -78,46 +76,46 @@ function Hero() {
           alt=""
           className="
             absolute right-0
-            top-[38px]
-            h-[390px] w-[54%]
+            top-[30px]
+            h-[350px] w-[55%]
             object-cover
             object-[65%_center]
-            grayscale opacity-100
-            sm:top-[42px]
-            sm:h-[430px] sm:w-[50%]
+            grayscale
+            sm:top-[35px]
+            sm:h-[390px] sm:w-[50%]
           "
           style={{
             maskImage:
-              "linear-gradient(to bottom, black 0%, black 68%, transparent 100%)",
+              "linear-gradient(to bottom, black 0%, black 62%, transparent 100%)",
             WebkitMaskImage:
-              "linear-gradient(to bottom, black 0%, black 68%, transparent 100%)",
+              "linear-gradient(to bottom, black 0%, black 62%, transparent 100%)",
           }}
         />
 
-        {/* Smooth transition between portrait and text */}
+        {/* BLEND IMAGE WITH CONTENT */}
         <div
           className="
             absolute inset-0
             bg-gradient-to-r
             from-[#050505] from-0%
-            via-[#050505]/75 via-40%
-            to-transparent to-80%
+            via-[#050505]/65 via-45%
+            to-transparent to-85%
           "
         />
 
-        {/* Fade to the exact same black at the bottom */}
+        {/* KEEP THE BOTTOM COLOR CONSISTENT */}
         <div
           className="
             absolute inset-0
             bg-gradient-to-b
-            from-transparent from-0%
-            via-transparent via-50%
-            to-[#050505] to-85%
+            from-transparent
+            via-transparent
+            to-[#050505]
           "
         />
       </div>
 
-      {/* DESKTOP PORTRAIT */}
+      {/* DESKTOP BACKGROUND PORTRAIT */}
       <div
         className="
           pointer-events-none
@@ -145,17 +143,19 @@ function Hero() {
             absolute inset-0
             bg-gradient-to-r
             from-[#050505]
-            via-[#050505]/25
+            via-[#050505]/20
             to-transparent
           "
         />
       </div>
 
-      {/* CONTENT */}
+      {/* HERO CONTENT */}
       <div
         className="
-          relative mx-auto w-full max-w-[1500px]
-          px-5 sm:px-10
+          relative mx-auto w-full
+          max-w-[1500px]
+          px-5
+          sm:px-10
           lg:px-16 xl:px-20
         "
       >
@@ -174,8 +174,9 @@ function Hero() {
           <p
             className="
               mb-3
-              text-[11px] font-medium uppercase
-              tracking-[0.28em] text-gray-400
+              text-[11px] font-medium
+              uppercase tracking-[0.28em]
+              text-gray-400
               sm:mb-4 sm:text-sm
               sm:tracking-[0.4em]
             "
@@ -200,20 +201,22 @@ function Hero() {
             Moharana
           </h1>
 
-          {/* GOLD ACCENT */}
+          {/* GOLD LINE */}
           <div
             className="
               mt-4 mb-3
-              h-[3px] w-16 bg-[#D9AE4D]
+              h-[3px] w-16
+              bg-[#D9AE4D]
               sm:mt-6 sm:mb-4 sm:w-20
             "
           />
 
-          {/* ROLE */}
+          {/* ANIMATED ROLE */}
           <div
             className="
               min-h-[24px]
-              text-sm font-semibold text-[#D9AE4D]
+              text-sm font-semibold
+              text-[#D9AE4D]
               sm:min-h-[30px] sm:text-lg
               lg:text-xl
             "
@@ -252,10 +255,11 @@ function Hero() {
             software solutions.
           </p>
 
-          {/* BUTTONS */}
+          {/* ACTION BUTTONS */}
           <div
             className="
-              mt-5 flex flex-wrap items-center gap-3
+              mt-5 flex flex-wrap
+              items-center gap-3
               sm:mt-7 sm:gap-4
             "
           >
@@ -301,8 +305,9 @@ function Hero() {
           {/* SOCIAL LINKS */}
           <div
             className="
-              mt-6 flex flex-wrap items-center
-              gap-5 text-lg text-gray-300
+              mt-6 flex flex-wrap
+              items-center gap-5
+              text-lg text-gray-300
               sm:mt-8 sm:gap-6 sm:text-xl
               lg:text-2xl
             "
