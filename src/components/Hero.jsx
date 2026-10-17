@@ -55,10 +55,10 @@ function Hero() {
       id="home"
       className="
         relative isolate
+        min-h-[calc(100svh-72px)]
         overflow-hidden
         bg-[#050505]
         text-white
-        min-h-[calc(100svh-72px)]
         flex items-center
         py-8
         sm:py-12
@@ -66,7 +66,7 @@ function Hero() {
         lg:py-20
       "
     >
-      {/* MOBILE PORTRAIT */}
+      {/* MOBILE BACKGROUND PORTRAIT */}
       <div
         className="
           absolute inset-0 -z-10
@@ -81,38 +81,38 @@ function Hero() {
           alt=""
           className="
             absolute
-            right-[-3%]
-            top-[12px]
-            h-[270px]
-            w-[49%]
+            right-0
+            top-[30px]
+            h-[290px]
+            w-[48%]
             object-cover
             object-[62%_center]
             grayscale
-            opacity-80
-            sm:top-[18px]
-            sm:h-[320px]
+            opacity-90
+            sm:top-[36px]
+            sm:h-[330px]
             sm:w-[45%]
           "
           style={{
             maskImage:
-              "linear-gradient(to bottom, transparent 0%, black 12%, black 65%, transparent 100%)",
+              "linear-gradient(to bottom, transparent 0%, black 10%, black 72%, transparent 100%)",
             WebkitMaskImage:
-              "linear-gradient(to bottom, transparent 0%, black 12%, black 65%, transparent 100%)",
+              "linear-gradient(to bottom, transparent 0%, black 10%, black 72%, transparent 100%)",
           }}
         />
 
-        {/* Blend portrait into the text area */}
+        {/* Blend the portrait smoothly into the left side */}
         <div
           className="
             absolute inset-0
             bg-gradient-to-r
             from-[#050505]
-            via-[#050505]/75
+            via-[#050505]/70
             to-transparent
           "
         />
 
-        {/* Prevent a visible color boundary at the bottom */}
+        {/* Uniform fade into the SAME background color */}
         <div
           className="
             absolute inset-0
@@ -124,7 +124,7 @@ function Hero() {
         />
       </div>
 
-      {/* DESKTOP PORTRAIT */}
+      {/* DESKTOP PORTRAIT — PRESERVED */}
       <div
         className="
           pointer-events-none
@@ -153,23 +153,13 @@ function Hero() {
             absolute inset-0
             bg-gradient-to-r
             from-[#050505]
-            via-[#050505]/30
-            to-transparent
-          "
-        />
-
-        <div
-          className="
-            absolute inset-0
-            bg-gradient-to-t
-            from-[#050505]/20
-            via-transparent
+            via-[#050505]/25
             to-transparent
           "
         />
       </div>
 
-      {/* CONTENT */}
+      {/* HERO CONTENT */}
       <div
         className="
           relative mx-auto
@@ -181,7 +171,7 @@ function Hero() {
         "
       >
         <motion.div
-          initial={{ opacity: 0, y: 18 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="
@@ -212,7 +202,8 @@ function Hero() {
           {/* NAME */}
           <h1
             className="
-              font-serif font-medium
+              font-serif
+              font-medium
               tracking-[-0.045em]
               text-[clamp(2.2rem,7.8vw,3.2rem)]
               leading-[0.98]
@@ -241,7 +232,8 @@ function Hero() {
           <div
             className="
               min-h-[24px]
-              text-sm font-semibold
+              text-sm
+              font-semibold
               text-[#D9AE4D]
               sm:min-h-[30px]
               sm:text-lg
@@ -287,7 +279,7 @@ function Hero() {
             software solutions.
           </p>
 
-          {/* BUTTONS */}
+          {/* ACTION BUTTONS */}
           <div
             className="
               mt-5
