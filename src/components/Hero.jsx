@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-scroll";
@@ -16,111 +15,150 @@ import {
 import profile from "../assets/images/profile.png";
 
 function Hero() {
-  const socials = [
+  const socialLinks = [
     {
-      href: "https://github.com/MoharanaSudhanshu",
-      label: "GitHub",
       icon: <FaGithub />,
+      url: "https://github.com/MoharanaSudhanshu",
+      label: "GitHub",
     },
     {
-      href: "https://leetcode.com/u/sudhanshumoharana/",
-      label: "LeetCode",
       icon: <SiLeetcode />,
+      url: "https://leetcode.com/u/sudhanshumoharana/",
+      label: "LeetCode",
     },
     {
-      href: "https://www.hackerrank.com/profile/moharanasudhans1",
-      label: "HackerRank",
       icon: <SiHackerrank />,
+      url: "https://www.hackerrank.com/profile/moharanasudhans1",
+      label: "HackerRank",
     },
     {
-      href: "https://www.linkedin.com/in/sudhanshu-sekhar-moharana-518b85290/",
-      label: "LinkedIn",
       icon: <FaLinkedin />,
+      url: "https://www.linkedin.com/in/sudhanshu-sekhar-moharana-518b85290/",
+      label: "LinkedIn",
     },
     {
-      href: "https://www.instagram.com/moharanasudhanshu/",
-      label: "Instagram",
       icon: <SiInstagram />,
+      url: "https://www.instagram.com/moharanasudhanshu/",
+      label: "Instagram",
     },
     {
-      href: "mailto:moharanasudhanshu1@gmail.com",
-      label: "Email",
       icon: <FaEnvelope />,
+      url: "mailto:moharanasudhanshu1@gmail.com",
+      label: "Email",
     },
   ];
 
   return (
     <section
       id="home"
-      className="min-h-screen bg-[#050505] flex items-center justify-center px-4 py-6 sm:px-6 lg:px-10"
+      className="
+        relative isolate min-h-screen overflow-hidden
+        bg-[#050505] text-white
+        flex items-center
+        pt-24 pb-12
+        sm:pt-28
+        lg:min-h-screen lg:pt-24 lg:pb-16
+      "
     >
-      <div className="relative isolate w-full max-w-[1500px] min-h-[680px] overflow-hidden rounded-2xl bg-[#050505] text-white lg:h-[82vh] lg:min-h-[680px]">
+      {/* Portrait background */}
+      <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-full overflow-hidden lg:w-[52%]">
+        <img
+          src={profile}
+          alt=""
+          aria-hidden="true"
+          className="
+            absolute right-0 top-0
+            h-full w-full
+            object-cover object-[55%_center]
+            opacity-35
+            grayscale
+            [mask-image:linear-gradient(to_bottom,transparent_0%,black_15%,black_75%,transparent_100%)]
+            lg:opacity-75
+            lg:[mask-image:linear-gradient(to_right,transparent_0%,black_30%,black_100%)]
+          "
+        />
 
-        {/* Subtle lighting behind portrait */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 z-0 w-full sm:w-[70%] lg:w-[53%]">
-          <motion.img
-            src={profile}
-            alt="Sudhanshu Moharana"
-            initial={{ opacity: 0, x: 35 }}
-            animate={{ opacity: 0.78, x: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className="absolute inset-0 h-full w-full object-cover object-top grayscale"
-          />
+        {/* Dark overlay to protect text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/80 to-transparent lg:via-[#050505]/25" />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/65 to-[#050505]/10 sm:via-[#050505]/35" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/75 via-transparent to-[#050505]/10" />
-        </div>
+        {/* Bottom fade */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-[#050505]/20 lg:from-transparent" />
+      </div>
 
-        {/* Hero content — main navigation is handled by Navbar.jsx */}
-        <div className="relative z-10 flex min-h-[680px] items-center px-6 pb-20 pt-16 sm:px-10 lg:min-h-0 lg:h-full lg:px-16">
+      {/* Main content */}
+      <div className="mx-auto w-full max-w-[1500px] px-6 sm:px-10 lg:px-16">
+        <div className="grid items-center lg:grid-cols-2">
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
-            className="w-full max-w-[700px]"
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative z-10 max-w-3xl"
           >
-            <p className="mb-5 text-xs uppercase tracking-[0.32em] text-gray-400 sm:text-sm">
+            {/* Intro */}
+            <p className="mb-5 text-xs font-medium uppercase tracking-[0.35em] text-gray-400 sm:text-sm sm:tracking-[0.4em]">
               Hello, I am
             </p>
 
-            <h1 className="font-serif text-[clamp(3.2rem,7vw,6.8rem)] leading-[0.88] tracking-[-0.045em]">
+            {/* Name */}
+            <h1
+              className="
+                font-serif font-medium tracking-[-0.045em]
+                text-[clamp(3.1rem,10vw,5rem)]
+                leading-[0.98]
+                sm:text-7xl
+                lg:text-[clamp(5rem,7vw,7.5rem)]
+              "
+            >
               Sudhanshu
               <br />
               Moharana
             </h1>
 
-            <div className="mt-6 h-[2px] w-12 bg-[#D9AE4D]" />
+            {/* Gold divider */}
+            <div className="mt-7 mb-5 h-[3px] w-16 bg-[#D9AE4D] sm:w-20" />
 
-            <div className="mt-4 min-h-7 text-sm tracking-wide text-[#D9AE4D] sm:text-base md:text-lg">
+            {/* Typing animation */}
+            <div className="min-h-[32px] text-base font-medium text-[#D9AE4D] sm:min-h-[40px] sm:text-xl">
               <TypeAnimation
                 sequence={[
                   "Full Stack Developer",
                   2000,
                   "MERN Stack Developer",
                   2000,
-                  "AI Enthusiast",
+                  "AI/ML Enthusiast",
+                  2000,
+                  "Software Developer",
                   2000,
                 ]}
                 wrapper="span"
-                speed={45}
+                speed={50}
                 repeat={Infinity}
               />
             </div>
 
-            <p className="mt-5 max-w-md text-sm leading-7 text-gray-400 sm:text-base">
+            {/* Description */}
+            <p className="mt-5 max-w-xl text-sm leading-7 text-gray-300 sm:text-base sm:leading-8 lg:text-lg">
               Computer Science student at SUIIT Burla, passionate about
               building full-stack applications, exploring artificial
               intelligence, and creating scalable software solutions.
             </p>
 
             {/* Buttons */}
-            <div className="mt-7 flex flex-wrap items-center gap-3">
+            <div className="mt-7 flex flex-wrap items-center gap-3 sm:gap-4">
               <Link
                 to="projects"
                 smooth
                 duration={500}
                 offset={-80}
-                className="cursor-pointer rounded-md bg-[#D9AE4D] px-5 py-3 text-sm font-semibold text-black transition hover:bg-[#E8C46C]"
+                className="
+                  inline-flex cursor-pointer items-center justify-center
+                  rounded-md bg-[#D9AE4D]
+                  px-5 py-3
+                  text-sm font-semibold text-black
+                  transition-colors duration-300
+                  hover:bg-[#E8C46C]
+                  sm:px-7 sm:py-3.5 sm:text-base
+                "
               >
                 Explore My Work
               </Link>
@@ -128,37 +166,55 @@ function Hero() {
               <a
                 href={`${import.meta.env.BASE_URL}resume.pdf`}
                 download
-                className="rounded-md border border-[#D9AE4D]/60 px-5 py-3 text-sm text-[#D9AE4D] transition hover:bg-[#D9AE4D] hover:text-black"
+                className="
+                  inline-flex items-center justify-center
+                  rounded-md border border-[#D9AE4D]/60
+                  px-5 py-3
+                  text-sm font-medium text-[#D9AE4D]
+                  transition-colors duration-300
+                  hover:bg-[#D9AE4D] hover:text-black
+                  sm:px-7 sm:py-3.5 sm:text-base
+                "
               >
                 Download Resume
               </a>
             </div>
 
             {/* Social links */}
-            <div className="mt-7 flex flex-wrap items-center gap-5 text-lg text-gray-400">
-              {socials.map((social) => (
+            <div className="mt-8 flex items-center gap-5 text-xl text-gray-400 sm:gap-6 sm:text-2xl">
+              {socialLinks.map((social) => (
                 <a
                   key={social.label}
-                  href={social.href}
+                  href={social.url}
                   aria-label={social.label}
-                  title={social.label}
                   target={
-                    social.href.startsWith("mailto:")
-                      ? undefined
-                      : "_blank"
+                    social.label === "Email" ? undefined : "_blank"
                   }
                   rel={
-                    social.href.startsWith("mailto:")
+                    social.label === "Email"
                       ? undefined
                       : "noopener noreferrer"
                   }
-                  className="transition hover:-translate-y-1 hover:text-[#D9AE4D]"
+                  className="
+                    transition-all duration-300
+                    hover:-translate-y-1
+                    hover:text-[#D9AE4D]
+                  "
                 >
                   {social.icon}
                 </a>
               ))}
             </div>
           </motion.div>
+
+          {/* Desktop-only portrait area */}
+          <motion.div
+            initial={{ opacity: 0, x: 35 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            className="hidden lg:block"
+            aria-hidden="true"
+          />
         </div>
 
         {/* Scroll indicator */}
@@ -167,10 +223,17 @@ function Hero() {
           smooth
           duration={500}
           offset={-80}
-          aria-label="Scroll to About"
-          className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 cursor-pointer text-3xl font-light text-gray-500 transition hover:text-[#D9AE4D]"
+          aria-label="Scroll to About section"
+          className="
+            absolute bottom-5 left-1/2
+            -translate-x-1/2
+            cursor-pointer
+            text-2xl text-gray-500
+            transition-colors hover:text-[#D9AE4D]
+            sm:bottom-7
+          "
         >
-          ⌄
+          ˅
         </Link>
       </div>
     </section>
