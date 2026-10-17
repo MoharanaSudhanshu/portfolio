@@ -49,14 +49,14 @@ function Navbar() {
           ))}
         </ul>
 
-        /* {/* Resume */}
+       <!--   {/* Resume */}
         <a
           href={resumeUrl}
           download
           className="hidden rounded-md bg-[#D9AE4D] px-5 py-2.5 text-sm font-semibold text-black transition-colors hover:bg-[#E8C46C] md:block"
         >
           Resume
-        </a> */
+        </a> -->
 
         {/* Mobile menu toggle */}
         <button
