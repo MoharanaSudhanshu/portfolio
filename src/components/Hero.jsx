@@ -54,63 +54,106 @@ function Hero() {
     <section
       id="home"
       className="
-        relative min-h-screen overflow-hidden
+        relative isolate min-h-screen overflow-hidden
         bg-[#050505] text-white
         flex items-center
-        pt-24 pb-12
-        sm:pt-28
+        pt-28 pb-12
+        sm:pt-32
         lg:pt-24 lg:pb-16
       "
     >
-      {/* Subtle Gold Background Glow */}
+      {/* Mobile portrait background */}
+      <div
+        className="
+          pointer-events-none absolute inset-0 -z-10
+          lg:hidden
+        "
+        aria-hidden="true"
+      >
+        <img
+          src={profile}
+          alt=""
+          className="
+            absolute right-0 top-0
+            h-full w-[78%]
+            object-cover object-top
+            grayscale
+            opacity-[0.23]
+          "
+        />
+
+        {/* Fade the image into the black background */}
+        <div
+          className="
+            absolute inset-0
+            bg-gradient-to-r
+            from-[#050505] via-[#050505]/75
+            to-[#050505]/25
+          "
+        />
+
+        <div
+          className="
+            absolute inset-0
+            bg-gradient-to-t
+            from-[#050505]
+            via-transparent
+            to-[#050505]/30
+          "
+        />
+      </div>
+
+      {/* Desktop background glow */}
       <div
         className="
           pointer-events-none absolute
-          -right-32 top-1/4
-          h-80 w-80 rounded-full
-          bg-[#D9AE4D]/5 blur-[100px]
+          right-0 top-1/4 -z-10
+          hidden h-96 w-96
+          rounded-full bg-[#D9AE4D]/5
+          blur-[100px] lg:block
         "
       />
 
-      {/* Main Container */}
       <div
         className="
-          relative mx-auto w-full max-w-[1400px]
+          mx-auto w-full max-w-[1400px]
           px-5 sm:px-10 lg:px-16
         "
       >
         <div
           className="
-            grid items-center gap-10
+            grid items-center
             lg:grid-cols-2 lg:gap-16
           "
         >
           {/* LEFT CONTENT */}
           <motion.div
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="relative z-10 order-1"
+            className="
+              relative z-10
+              max-w-2xl
+            "
           >
-            {/* Introduction */}
             <p
               className="
                 mb-5
                 text-xs font-medium uppercase
-                tracking-[0.3em] text-gray-400
+                tracking-[0.3em]
+                text-gray-400
                 sm:text-sm sm:tracking-[0.4em]
               "
             >
               Hello, I am
             </p>
 
-            {/* Name */}
             <h1
               className="
                 font-serif font-medium
                 tracking-[-0.045em]
-                text-[clamp(2.65rem,9vw,4rem)]
-                leading-[1.02]
+                text-[clamp(2.8rem,10vw,4rem)]
+                leading-[0.98]
                 sm:text-7xl
                 lg:text-[clamp(4rem,5.5vw,6rem)]
               "
@@ -120,7 +163,7 @@ function Hero() {
               Moharana
             </h1>
 
-            {/* Gold Divider */}
+            {/* Gold divider */}
             <div
               className="
                 mt-6 mb-5
@@ -130,13 +173,13 @@ function Hero() {
               "
             />
 
-            {/* Typing Animation */}
+            {/* Animated designation */}
             <div
               className="
-                min-h-[32px]
+                min-h-[30px]
                 text-base font-medium
                 text-[#D9AE4D]
-                sm:min-h-[38px] sm:text-xl
+                sm:min-h-[36px] sm:text-xl
               "
             >
               <TypeAnimation
@@ -156,7 +199,7 @@ function Hero() {
               />
             </div>
 
-            {/* Description */}
+            {/* Introduction */}
             <p
               className="
                 mt-5 max-w-xl
@@ -173,7 +216,7 @@ function Hero() {
               software solutions.
             </p>
 
-            {/* Action Buttons */}
+            {/* Buttons */}
             <div
               className="
                 mt-7 flex flex-wrap
@@ -187,17 +230,16 @@ function Hero() {
                 duration={500}
                 offset={-80}
                 className="
-                  inline-flex cursor-pointer
-                  items-center justify-center
-                  rounded-md
+                  inline-flex min-h-12
+                  cursor-pointer items-center
+                  justify-center rounded-md
                   bg-[#D9AE4D]
                   px-4 py-3
                   text-sm font-semibold
                   text-black
-                  transition-colors duration-300
+                  transition-colors
                   hover:bg-[#E8C46C]
-                  sm:px-6 sm:py-3.5
-                  sm:text-base
+                  sm:px-6 sm:text-base
                 "
               >
                 Explore My Work
@@ -207,30 +249,29 @@ function Hero() {
                 href={`${import.meta.env.BASE_URL}resume.pdf`}
                 download
                 className="
-                  inline-flex items-center
-                  justify-center
+                  inline-flex min-h-12
+                  items-center justify-center
                   rounded-md
                   border border-[#D9AE4D]/60
                   px-4 py-3
                   text-sm font-medium
                   text-[#D9AE4D]
-                  transition-colors duration-300
+                  transition-colors
                   hover:bg-[#D9AE4D]
                   hover:text-black
-                  sm:px-6 sm:py-3.5
-                  sm:text-base
+                  sm:px-6 sm:text-base
                 "
               >
                 Download Resume
               </a>
             </div>
 
-            {/* Social Links */}
+            {/* Social links */}
             <div
               className="
                 mt-8 flex flex-wrap
                 items-center gap-5
-                text-xl text-gray-400
+                text-xl text-gray-300
                 sm:gap-6 sm:text-2xl
               "
             >
@@ -250,8 +291,7 @@ function Hero() {
                       : "noopener noreferrer"
                   }
                   className="
-                    transition-all duration-300
-                    hover:-translate-y-1
+                    transition-colors duration-300
                     hover:text-[#D9AE4D]
                   "
                 >
@@ -261,51 +301,33 @@ function Hero() {
             </div>
           </motion.div>
 
-          {/* RIGHT PORTRAIT */}
+          {/* DESKTOP PORTRAIT ONLY */}
           <motion.div
-            initial={{ opacity: 0, x: 35 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             className="
-              relative order-2
-              mx-auto w-full max-w-[230px]
-              sm:max-w-[280px]
-              lg:max-w-[390px]
+              relative mx-auto
+              hidden w-full max-w-[390px]
+              lg:block
             "
           >
-            {/* Soft Gold Glow */}
-            <div
-              className="
-                absolute inset-0
-                rounded-2xl
-                bg-[#D9AE4D]/10
-                blur-3xl
-              "
-            />
-
-            {/* Portrait */}
             <img
               src={profile}
               alt="Sudhanshu Moharana"
               className="
                 relative z-10
                 aspect-[4/5] w-full
-                rounded-2xl
-                border border-[#D9AE4D]/20
                 object-cover object-top
                 grayscale
-                shadow-[0_0_30px_rgba(217,174,77,0.08)]
-                transition-transform duration-500
-                hover:scale-[1.02]
               "
             />
 
-            {/* Decorative Gold Line */}
+            {/* Subtle accent */}
             <div
               className="
                 absolute -bottom-3 -right-3
                 h-16 w-16
-                rounded-br-2xl
                 border-b-2 border-r-2
                 border-[#D9AE4D]/60
               "
@@ -313,7 +335,7 @@ function Hero() {
           </motion.div>
         </div>
 
-        {/* Scroll Indicator */}
+        {/* Scroll indicator */}
         <Link
           to="about"
           smooth={true}
@@ -321,13 +343,12 @@ function Hero() {
           offset={-80}
           aria-label="Scroll to About section"
           className="
-            absolute bottom-0 left-1/2
-            hidden -translate-x-1/2
-            cursor-pointer
+            mt-12 block
+            cursor-pointer text-center
             text-2xl text-gray-500
             transition-colors
             hover:text-[#D9AE4D]
-            sm:block
+            lg:hidden
           "
         >
           ˅
