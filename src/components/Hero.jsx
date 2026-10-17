@@ -1,4 +1,4 @@
-```jsx
+
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-scroll";
@@ -347,4 +347,3 @@ function Hero() {
 }
 
 export default Hero;
-```
