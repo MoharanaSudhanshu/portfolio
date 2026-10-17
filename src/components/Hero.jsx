@@ -1,224 +1,215 @@
+
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
 import { Link } from "react-scroll";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { SiHackerrank, SiInstagram, SiLeetcode } from "react-icons/si";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+} from "react-icons/fa";
+import {
+  SiHackerrank,
+  SiInstagram,
+  SiLeetcode,
+} from "react-icons/si";
 
 import profile from "../assets/images/profile.png";
 
 function Hero() {
+  const socials = [
+    {
+      href: "https://github.com/MoharanaSudhanshu",
+      label: "GitHub",
+      icon: <FaGithub />,
+    },
+    {
+      href: "https://leetcode.com/u/sudhanshumoharana/",
+      label: "LeetCode",
+      icon: <SiLeetcode />,
+    },
+    {
+      href: "https://www.hackerrank.com/profile/moharanasudhans1",
+      label: "HackerRank",
+      icon: <SiHackerrank />,
+    },
+    {
+      href: "https://www.linkedin.com/in/sudhanshu-sekhar-moharana-518b85290/",
+      label: "LinkedIn",
+      icon: <FaLinkedin />,
+    },
+    {
+      href: "https://www.instagram.com/moharanasudhanshu/",
+      label: "Instagram",
+      icon: <SiInstagram />,
+    },
+    {
+      href: "mailto:moharanasudhanshu1@gmail.com",
+      label: "Email",
+      icon: <FaEnvelope />,
+    },
+  ];
+
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center px-6 pt-24"
+      className="min-h-screen bg-[#D9AE4D] flex items-center justify-center p-3 pt-24 sm:p-6 lg:p-10"
     >
-      {" "}
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-        {/* Left Content */}
-        <motion.div
-          initial={{ opacity: 0, x: -80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <p className="text-yellow-500 text-lg mb-4">Hello, I'm</p>
+      <div className="relative isolate w-full max-w-[1500px] min-h-[680px] lg:min-h-[680px] lg:h-[82vh] overflow-hidden rounded-2xl bg-[#050505] text-white shadow-2xl">
 
-          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-            Sudhanshu
-            <br />
-            Moharana
-          </h1>
+        {/* Subtle gold ambient lighting */}
+        <div className="pointer-events-none absolute -bottom-32 left-1/2 h-72 w-96 -translate-x-1/2 rounded-full bg-[#D9AE4D]/10 blur-[100px]" />
 
-          <div className="text-2xl md:text-4xl mt-4 font-semibold">
-            <TypeAnimation
-              sequence={[
-                "Full Stack Developer",
-                2000,
-                "MERN Stack Developer",
-                2000,
-                "AI Enthusiast",
-                2000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-              className="text-yellow-500"
-            />
-          </div>
+        {/* Navigation */}
+        <nav className="relative z-30 flex items-center justify-between px-6 py-6 sm:px-10 lg:px-12">
+          <a
+            href="#home"
+            className="text-2xl font-bold tracking-tight"
+          >
+            sudhanshu<span className="text-[#D9AE4D]">.</span>
+          </a>
 
-          <p className="text-gray-400 mt-6 max-w-xl leading-relaxed">
-            B.Tech Computer Science student at SUIIT Burla, passionate about
-            Full Stack Development, Artificial Intelligence, and building
-            scalable software solutions that solve real-world problems.
-          </p>
-
-          {/* Tech Stack */}
-          <div className="flex flex-wrap gap-3 mt-6">
-            {["React", "Node.js", "MongoDB", "Express", "Python", "AI/ML"].map(
-              (tech) => (
-                <span
-                  key={tech}
-                  className="
-              px-4
-              py-2
-              rounded-full
-              bg-yellow-500/10
-              border
-              border-yellow-500/20
-              text-sm
-            "
-                >
-                  {tech}
-                </span>
-              ),
-            )}
-          </div>
-
-          {/* Buttons */}
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              to="projects"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              className="
-            cursor-pointer
-            bg-yellow-500
-            text-black
-            px-6
-            py-3
-            rounded-lg
-            font-semibold
-            hover:bg-yellow-400
-            transition
-          "
-            >
-              View Projects
-            </Link>
-
+          <div className="hidden items-center gap-5 text-[10px] uppercase tracking-[0.18em] text-gray-400 sm:flex md:gap-8">
             <a
-              href="/public/resume.pdf"
-              download
-              className="
-            border
-            border-yellow-500
-            text-yellow-500
-            px-6
-            py-3
-            rounded-lg
-            hover:bg-yellow-500
-            hover:text-black
-            transition
-          "
+              href="#home"
+              className="border-b border-[#D9AE4D] pb-1 text-[#D9AE4D]"
             >
-              Download Resume
+              Home
+            </a>
+            <a href="#about" className="transition hover:text-[#D9AE4D]">
+              About
+            </a>
+            <a href="#projects" className="transition hover:text-[#D9AE4D]">
+              Work
+            </a>
+            <a href="#education" className="transition hover:text-[#D9AE4D]">
+              Education
+            </a>
+            <a href="#contact" className="transition hover:text-[#D9AE4D]">
+              Contact
             </a>
           </div>
+        </nav>
 
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-10">
-            <div>
-              <h3 className="text-2xl font-bold text-yellow-500">8.77</h3>
-              <p className="text-gray-400 text-sm">CGPA</p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold text-yellow-500">4</h3>
-              <p className="text-gray-400 text-sm">Internships</p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold text-yellow-500">4+</h3>
-              <p className="text-gray-400 text-sm">Major Projects</p>
-            </div>
-
-            <div>
-              <h3 className="text-2xl font-bold text-yellow-500">10+</h3>
-              <p className="text-gray-400 text-sm">Achievements</p>
-            </div>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex gap-5 mt-10 text-2xl">
-            <a
-              href="https://github.com/MoharanaSudhanshu"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-yellow-500 transition"
-            >
-              <FaGithub />
-            </a>
-
-            <a
-              href="https://leetcode.com/u/sudhanshumoharana/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-yellow-500 transition"
-            >
-              <SiLeetcode />
-            </a>
-            <a
-              href="https://www.hackerrank.com/profile/moharanasudhans1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-yellow-500 transition"
-            >
-              <SiHackerrank />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/sudhanshu-sekhar-moharana-518b85290/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-yellow-500 transition"
-            >
-              <FaLinkedin />
-            </a>
-            <a
-              href="https://www.instagram.com/moharanasudhanshu/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-yellow-500 transition"
-            >
-              <SiInstagram />
-            </a>
-            <a
-              href="mailto:moharanasudhanshu1@gmail.com"
-              className="hover:text-yellow-500 transition"
-            >
-              <FaEnvelope />
-            </a>
-          </div>
-        </motion.div>
-
-        {/* Right Image */}
-        <motion.div
-          initial={{ opacity: 0, x: 80 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
-          className="flex justify-center"
-        >
-          <div className="relative">
-            <div className="absolute inset-0 bg-yellow-500/10 blur-[120px] rounded-full"></div>
-
-            
-          <img
+        {/* Portrait background */}
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-0 w-full sm:w-[70%] lg:w-[53%]">
+          <motion.img
             src={profile}
             alt="Sudhanshu Moharana"
-            className="
-            relative
-            w-[260px]
-            sm:w-[300px]
-            md:w-[330px]
-            lg:w-[370px]
-            rounded-2xl
-            object-cover
-            border border-yellow-500/20
-            shadow-[0_0_25px_rgba(212,175,55,0.10)]
-            transition-all duration-500
-          "
+            initial={{ opacity: 0, x: 35 }}
+            animate={{ opacity: 0.78, x: 0 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            className="absolute inset-0 h-full w-full object-cover object-top grayscale"
           />
 
-          </div>
-        </motion.div>
+          {/* Blend portrait into the black background */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#050505] via-[#050505]/65 to-[#050505]/10 sm:via-[#050505]/35" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#050505]/75 via-transparent to-[#050505]/10" />
+        </div>
+
+        {/* Hero text */}
+        <div className="relative z-10 flex min-h-[570px] items-center px-6 pb-20 sm:px-10 lg:min-h-0 lg:h-[calc(100%-88px)] lg:px-16">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+            className="w-full max-w-[700px]"
+          >
+            <p className="mb-5 text-xs uppercase tracking-[0.32em] text-gray-400 sm:text-sm">
+              Hello, I am
+            </p>
+
+            <h1 className="font-serif text-[clamp(3.2rem,7vw,6.8rem)] leading-[0.88] tracking-[-0.045em]">
+              Sudhanshu
+              <br />
+              Moharana
+            </h1>
+
+            <div className="ml-auto mt-6 h-[2px] w-12 bg-[#D9AE4D]" />
+
+            <div className="mt-4 min-h-7 text-sm tracking-wide text-[#D9AE4D] sm:text-base md:text-lg">
+              <TypeAnimation
+                sequence={[
+                  "Full Stack Developer",
+                  2000,
+                  "MERN Stack Developer",
+                  2000,
+                  "AI Enthusiast",
+                  2000,
+                ]}
+                wrapper="span"
+                speed={45}
+                repeat={Infinity}
+              />
+            </div>
+
+            <p className="mt-5 max-w-md text-sm leading-7 text-gray-400 sm:text-base">
+              Computer Science student at SUIIT Burla, passionate about
+              building full-stack applications, exploring artificial
+              intelligence, and creating scalable software solutions.
+            </p>
+
+            {/* Primary actions */}
+            <div className="mt-7 flex flex-wrap items-center gap-3">
+              <Link
+                to="projects"
+                smooth
+                duration={500}
+                offset={-80}
+                className="cursor-pointer rounded-md bg-[#D9AE4D] px-5 py-3 text-sm font-semibold text-black transition hover:bg-[#E8C46C]"
+              >
+                Explore My Work
+              </Link>
+
+              <a
+                href={`${import.meta.env.BASE_URL}resume.pdf`}
+                download
+                className="rounded-md border border-[#D9AE4D]/60 px-5 py-3 text-sm text-[#D9AE4D] transition hover:bg-[#D9AE4D] hover:text-black"
+              >
+                Download Resume
+              </a>
+            </div>
+
+            {/* Social links */}
+            <div className="mt-7 flex flex-wrap items-center gap-5 text-lg text-gray-400">
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  title={social.label}
+                  target={social.href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={
+                    social.href.startsWith("mailto:")
+                      ? undefined
+                      : "noopener noreferrer"
+                  }
+                  className="transition hover:-translate-y-1 hover:text-[#D9AE4D]"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Scroll indicator */}
+        <Link
+          to="about"
+          smooth
+          duration={500}
+          offset={-80}
+          className="absolute bottom-5 left-1/2 z-20 -translate-x-1/2 cursor-pointer text-3xl font-light text-gray-500 transition hover:text-[#D9AE4D]"
+          aria-label="Scroll to About"
+        >
+          ⌄
+        </Link>
+
+        {/* Side indicator */}
+        <div className="absolute right-5 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-2 text-[10px] text-gray-400 md:flex">
+          <span>•</span>
+          <span>•</span>
+          <span>•</span>
+        </div>
       </div>
     </section>
   );
