@@ -65,57 +65,56 @@ function Hero() {
         lg:py-20
       "
     >
-      {/* =========================================
-          MOBILE BACKGROUND
-          Small portrait positioned beside the name
-      ========================================== */}
+      {/* =====================================
+          MOBILE PORTRAIT
+          Positioned beside the name
+      ====================================== */}
       <div
         className="
           absolute inset-0 -z-10
           overflow-hidden
-          lg:hidden
           bg-[#050505]
+          lg:hidden
         "
         aria-hidden="true"
       >
-        {/* Small portrait on the right */}
         <img
           src={profile}
           alt=""
           className="
             absolute
-            right-[-8%]
-            top-[5%]
-            h-[310px]
-            w-[58%]
+            right-[-7%]
+            top-[28px]
+            h-[280px]
+            w-[52%]
             object-cover
             object-[65%_center]
             grayscale
             opacity-75
-            sm:top-[3%]
-            sm:h-[360px]
-            sm:w-[52%]
+            sm:top-[35px]
+            sm:h-[340px]
+            sm:w-[48%]
           "
           style={{
             maskImage:
-              "linear-gradient(to bottom, black 55%, transparent 100%)",
+              "linear-gradient(to bottom, transparent 0%, black 10%, black 70%, transparent 100%)",
             WebkitMaskImage:
-              "linear-gradient(to bottom, black 55%, transparent 100%)",
+              "linear-gradient(to bottom, transparent 0%, black 10%, black 70%, transparent 100%)",
           }}
         />
 
-        {/* Smooth blend on the left */}
+        {/* Keep text readable on the left */}
         <div
           className="
             absolute inset-0
             bg-gradient-to-r
             from-[#050505]
             via-[#050505]/85
-            to-[#050505]/10
+            to-[#050505]/15
           "
         />
 
-        {/* Blend the portrait into the page background */}
+        {/* Smooth bottom blend */}
         <div
           className="
             absolute inset-0
@@ -127,10 +126,10 @@ function Hero() {
         />
       </div>
 
-      {/* =========================================
-          DESKTOP BACKGROUND
-          Preserved separately from mobile styling
-      ========================================== */}
+      {/* =====================================
+          DESKTOP PORTRAIT
+          Desktop styling kept separate
+      ====================================== */}
       <div
         className="
           pointer-events-none
@@ -175,9 +174,9 @@ function Hero() {
         />
       </div>
 
-      {/* =========================================
-          CONTENT
-      ========================================== */}
+      {/* =====================================
+          HERO CONTENT
+      ====================================== */}
       <div
         className="
           relative mx-auto
@@ -220,7 +219,8 @@ function Hero() {
           {/* NAME */}
           <h1
             className="
-              font-serif font-medium
+              font-serif
+              font-medium
               tracking-[-0.045em]
               text-[clamp(2.3rem,8vw,3.4rem)]
               leading-[0.98]
@@ -296,7 +296,7 @@ function Hero() {
             software solutions.
           </p>
 
-          {/* BUTTONS */}
+          {/* ACTION BUTTONS */}
           <div
             className="
               mt-5
@@ -404,30 +404,6 @@ function Hero() {
             ))}
           </div>
         </motion.div>
-
-        {/* SCROLL INDICATOR */}
-        <Link
-          to="about"
-          smooth={true}
-          duration={500}
-          offset={-80}
-          aria-label="Scroll to About section"
-          className="
-            relative z-10
-            mt-8
-            block
-            cursor-pointer
-            text-center
-            text-xl
-            text-gray-500
-            transition-colors
-            hover:text-[#D9AE4D]
-            sm:mt-10
-            lg:mt-8
-          "
-        >
-          ˅
-        </Link>
       </div>
     </section>
   );
