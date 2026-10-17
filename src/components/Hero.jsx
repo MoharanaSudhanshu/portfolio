@@ -204,19 +204,17 @@ function Hero() {
             src={profile}
             alt="Sudhanshu Moharana"
             className="
-              relative
-              w-[260px]
-              sm:w-[300px]
-              md:w-[330px]
-              lg:w-[360px]
-              rounded-2xl
-              object-cover
-              border
-              border-yellow-500/20
-              shadow-[0_0_30px_rgba(212,175,55,0.12)]
-              transition-all
-              duration-500
-            "
+            relative
+            w-[260px]
+            sm:w-[300px]
+            md:w-[330px]
+            lg:w-[370px]
+            rounded-2xl
+            object-cover
+            border border-yellow-500/20
+            shadow-[0_0_25px_rgba(212,175,55,0.10)]
+            transition-all duration-500
+          "
           />
 
           </div>
