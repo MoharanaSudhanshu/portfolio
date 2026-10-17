@@ -73,7 +73,7 @@ function Hero() {
           "
         />
 
-        {/* Blend portrait into the black background */}
+        {/* Mobile portrait blending */}
         <div
           className="
             absolute
@@ -86,10 +86,12 @@ function Hero() {
           "
         />
 
+        {/* Desktop portrait blending */}
         <div
           className="
             absolute
             inset-0
+            hidden
             bg-gradient-to-r
             from-[#0b0b0b]
             via-[#0b0b0b]/50
@@ -113,17 +115,19 @@ function Hero() {
         "
       >
         <div className="max-w-3xl">
-          {/* Intro */}
+
+          {/* Introduction */}
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="
               text-gray-400
-              text-sm
-              sm:text-base
+              text-xs
+              sm:text-sm
+              md:text-base
               font-semibold
-              tracking-[0.35em]
+              tracking-[0.3em]
               uppercase
               mb-5
             "
@@ -140,7 +144,7 @@ function Hero() {
               font-serif
               font-medium
               text-white
-              text-[clamp(2.8rem,8vw,5.8rem)]
+              text-[clamp(2.3rem,7vw,5.8rem)]
               leading-[0.98]
               tracking-[-0.045em]
             "
@@ -166,10 +170,10 @@ function Hero() {
           {/* Animated Designation */}
           <div
             className="
-              min-h-[34px]
+              min-h-[30px]
               text-[#d4af55]
-              text-lg
-              sm:text-xl
+              text-base
+              sm:text-lg
               md:text-2xl
               font-semibold
             "
@@ -197,12 +201,14 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="
-              mt-7
+              mt-6
               max-w-2xl
               text-gray-300
-              text-base
-              sm:text-lg
-              leading-8
+              text-sm
+              sm:text-base
+              md:text-lg
+              leading-7
+              sm:leading-8
             "
           >
             Computer Science student at SUIIT Burla, passionate
@@ -211,13 +217,13 @@ function Hero() {
             software solutions.
           </motion.p>
 
-          {/* Action Buttons */}
+          {/* Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="
-              mt-8
+              mt-7
               flex
               flex-wrap
               gap-3
@@ -236,16 +242,17 @@ function Hero() {
                 cursor-pointer
                 rounded-lg
                 bg-[#d4af55]
-                px-5
-                py-3.5
-                sm:px-7
-                sm:py-4
+                px-4
+                py-3
                 text-sm
-                sm:text-base
                 font-semibold
                 text-black
                 transition
                 hover:bg-[#f4c95d]
+
+                sm:px-7
+                sm:py-4
+                sm:text-base
               "
             >
               Explore My Work
@@ -261,17 +268,18 @@ function Hero() {
                 rounded-lg
                 border
                 border-[#8d7541]
-                px-5
-                py-3.5
-                sm:px-7
-                sm:py-4
+                px-4
+                py-3
                 text-sm
-                sm:text-base
                 font-semibold
                 text-[#d4af55]
                 transition
                 hover:bg-[#d4af55]
                 hover:text-black
+
+                sm:px-7
+                sm:py-4
+                sm:text-base
               "
             >
               Download Resume
@@ -284,14 +292,16 @@ function Hero() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             className="
-              mt-8
+              mt-7
               flex
               flex-wrap
               items-center
-              gap-6
-              text-2xl
+              gap-5
+              text-xl
               text-gray-300
+
               sm:gap-7
+              sm:text-2xl
             "
           >
             <a
@@ -352,6 +362,7 @@ function Hero() {
               <FaEnvelope />
             </a>
           </motion.div>
+
         </div>
       </div>
     </section>
