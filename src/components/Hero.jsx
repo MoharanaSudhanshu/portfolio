@@ -54,64 +54,90 @@ function Hero() {
     <section
       id="home"
       className="
-        relative isolate flex min-h-[calc(100svh-72px)]
-        items-center overflow-hidden bg-[#050505]
+        relative isolate
+        min-h-screen
+        overflow-hidden
+        bg-[#050505]
         text-white
-        pt-8 pb-8
-        sm:min-h-screen sm:pt-20
-        lg:min-h-screen lg:pt-20 lg:pb-12
+        flex items-center
+        py-12
+        sm:py-16
+        lg:py-20
       "
     >
-      {/* MOBILE BACKGROUND PORTRAIT */}
+      {/* =========================================
+          MOBILE BACKGROUND
+          Small portrait positioned beside the name
+      ========================================== */}
       <div
         className="
-          absolute inset-0 -z-10 overflow-hidden
+          absolute inset-0 -z-10
+          overflow-hidden
           lg:hidden
+          bg-[#050505]
         "
         aria-hidden="true"
       >
+        {/* Small portrait on the right */}
         <img
           src={profile}
           alt=""
           className="
-            absolute right-0 top-0
-            h-full w-full
+            absolute
+            right-[-8%]
+            top-[5%]
+            h-[310px]
+            w-[58%]
             object-cover
-            object-[62%_center]
+            object-[65%_center]
             grayscale
-            opacity-45
+            opacity-75
+            sm:top-[3%]
+            sm:h-[360px]
+            sm:w-[52%]
           "
+          style={{
+            maskImage:
+              "linear-gradient(to bottom, black 55%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to bottom, black 55%, transparent 100%)",
+          }}
         />
 
-        {/* Keep the left text area readable */}
+        {/* Smooth blend on the left */}
         <div
           className="
             absolute inset-0
             bg-gradient-to-r
             from-[#050505]
-            via-[#050505]/80
-            to-[#050505]/25
+            via-[#050505]/85
+            to-[#050505]/10
           "
         />
 
-        {/* Subtle bottom fade */}
+        {/* Blend the portrait into the page background */}
         <div
           className="
             absolute inset-0
-            bg-gradient-to-t
-            from-[#050505]/70
+            bg-gradient-to-b
+            from-transparent
             via-transparent
-            to-[#050505]/15
+            to-[#050505]
           "
         />
       </div>
 
-      {/* DESKTOP FULL-BLEED PORTRAIT */}
+      {/* =========================================
+          DESKTOP BACKGROUND
+          Preserved separately from mobile styling
+      ========================================== */}
       <div
         className="
-          pointer-events-none absolute inset-y-0
-          right-0 -z-10 hidden
-          w-[58%] overflow-hidden
+          pointer-events-none
+          absolute inset-y-0 right-0
+          -z-10 hidden
+          w-[58%]
+          overflow-hidden
           lg:block
         "
         aria-hidden="true"
@@ -125,38 +151,37 @@ function Hero() {
             object-cover
             object-[65%_center]
             grayscale
-            opacity-100
           "
         />
 
-        {/* Blend only the left side of the portrait */}
         <div
           className="
             absolute inset-0
             bg-gradient-to-r
             from-[#050505]
-            via-[#050505]/35
+            via-[#050505]/30
             to-transparent
           "
         />
 
-        {/* A light bottom fade, preserving face details */}
         <div
           className="
             absolute inset-0
             bg-gradient-to-t
-            from-[#050505]/30
+            from-[#050505]/20
             via-transparent
             to-transparent
           "
         />
       </div>
 
-      {/* MAIN CONTENT */}
+      {/* =========================================
+          CONTENT
+      ========================================== */}
       <div
         className="
-          relative mx-auto w-full
-          max-w-[1500px]
+          relative mx-auto
+          w-full max-w-[1500px]
           px-5
           sm:px-10
           lg:px-16
@@ -175,7 +200,7 @@ function Hero() {
             xl:max-w-[620px]
           "
         >
-          {/* INTRODUCTION LABEL */}
+          {/* INTRODUCTION */}
           <p
             className="
               mb-3
@@ -197,7 +222,7 @@ function Hero() {
             className="
               font-serif font-medium
               tracking-[-0.045em]
-              text-[clamp(2.35rem,8.1vw,3.5rem)]
+              text-[clamp(2.3rem,8vw,3.4rem)]
               leading-[0.98]
               sm:text-6xl
               lg:text-[clamp(3.5rem,5vw,5.5rem)]
@@ -224,7 +249,8 @@ function Hero() {
           <div
             className="
               min-h-[24px]
-              text-sm font-semibold
+              text-sm
+              font-semibold
               text-[#D9AE4D]
               sm:min-h-[30px]
               sm:text-lg
@@ -270,7 +296,7 @@ function Hero() {
             software solutions.
           </p>
 
-          {/* ACTION BUTTONS */}
+          {/* BUTTONS */}
           <div
             className="
               mt-5
