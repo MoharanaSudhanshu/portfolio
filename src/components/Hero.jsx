@@ -199,24 +199,26 @@ function Hero() {
           <div className="relative">
             <div className="absolute inset-0 bg-yellow-500/10 blur-[120px] rounded-full"></div>
 
-            <img
-              src={profile}
-              alt="Sudhanshu Moharana"
-              className="
-            relative
-            w-[320px]
-            md:w-[450px]
-            lg:w-[500px]
-            rounded-3xl
-            object-cover
-            border
-            border-yellow-500/20
-            shadow-[0_0_50px_rgba(212,175,55,0.2)]
-            hover:scale-105
-            transition-all
-            duration-500
-          "
-            />
+            
+          <img
+            src={profile}
+            alt="Sudhanshu Moharana"
+            className="
+              relative
+              w-[260px]
+              sm:w-[300px]
+              md:w-[330px]
+              lg:w-[360px]
+              rounded-2xl
+              object-cover
+              border
+              border-yellow-500/20
+              shadow-[0_0_30px_rgba(212,175,55,0.12)]
+              transition-all
+              duration-500
+            "
+          />
+
           </div>
         </motion.div>
       </div>
